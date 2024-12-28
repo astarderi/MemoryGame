@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- מסך פתיחת המשחק -->
+        <div id="setup-screen" class="setup-screen">
+            <h1 id="welcome-title">Welcome to Memory Game</h1>
+            <form id="setup-form">
+                <div>
+                    <input type="text" id="player-name" placeholder="Enter Your Name" required>
+                </div>
+                <div>
+                    <input type="number"  id="pair-count" placeholder="Number of Pairs" min="1" max="30" required>
+                </div>
+                <button type="submit">Start Game</button>
+            </form>
+        </div>
+        
+        <!-- מסך המשחק -->
+        <div id="game-container" class="hidden">
+            <div class="header">
+                <h2>Memory Game</h2>
+                <div id="player-info"></div>
+            </div>
+            <div class="game-wrapper">
+                <div id="timer">Time: 00:00</div>
+                <div class="game"></div>
+            </div>
+            <div class="footer">
+                <button class="reset" onclick="window.location.reload();">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- הודעת הניצחון -->
+<div id="win-message" class="hidden">
+    <h1>You win!</h1>
+    <p id="win-time"></p>
+    <button onclick="resetGame()">Play Again</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

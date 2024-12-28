@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: beige;
+}
+
+#welcome-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #510644;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgb(184, 150, 209);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+#player-name, #pair-count {
+    border-radius: 8px;
+    border: 2px solid rgb(46, 4, 54);
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+#pair-count {
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+}
+
+.setup-screen, .header, .footer {
+    text-align: center;
+    color: rgb(113, 26, 109);
+    font-weight: bold;
+}
+
+.setup-screen input {
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(118, 145, 136);
+}
+
+.setup-screen button, .reset {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: beige;
+    color: rgb(38, 1, 53);
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+#timer {
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(69, 4, 68);
+    text-align: center;
+}
+
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background: whitesmoke;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item.boxMatch {
+    background: lightgreen;
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: lightgray;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+#win-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: none;
+}
+
+#win-message.show {
+    display: block;
+}
+
+#win-message button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#win-message button:hover {
+    background-color: #45a049;
+}
